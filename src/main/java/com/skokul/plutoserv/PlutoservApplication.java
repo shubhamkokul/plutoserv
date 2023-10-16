@@ -9,5 +9,4 @@ public class PlutoservApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PlutoservApplication.class, args);
 	}
-
 }

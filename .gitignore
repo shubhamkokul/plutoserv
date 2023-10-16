@@ -23,6 +23,9 @@ target/
 ### mvn files
 .mvn
 
+## Config Files
+*.sh
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
