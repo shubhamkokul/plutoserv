@@ -13,6 +13,7 @@ import com.skokul.plutoserv.auth.model.AccessTokenArgument;
 import com.skokul.plutoserv.auth.model.AccessTokenResult;
 import com.skokul.plutoserv.auth.model.AccessTokenProcess;
 import com.skokul.plutoserv.auth.service.TokenManagement;
+import com.skokul.plutoserv.auth.service.ValidationUtil;
 import com.skokul.plutoserv.communication.PlutoResponse;
 import com.skokul.plutoserv.data.PlutoConfiguration;
 
@@ -32,7 +33,7 @@ public class PlutoAuthenticator {
         // access-token, userId and email.
         try {
             // Validate EMAIL before creating Token
-            if (body != null && !body.getEmail().isEmpty()) {
+            if (body != null && ValidationUtil.isValidEmail(body.getEmail())) {
                 String email = body.getEmail();
                 return ResponseEntity.ok()
                         .body(new PlutoResponse.Builder<AccessTokenResult>()
